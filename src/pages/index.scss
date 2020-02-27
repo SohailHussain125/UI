@@ -511,7 +511,6 @@ header .banner-content .content {
   font-size: 0.938em;
 }
 
-
 @media (min-width: 992px) {
   .customer-satisfaction .left-image-wrapper {
     height: 100%;
@@ -762,7 +761,7 @@ header .banner-content .content {
 .testimonials .testimonial-carousel .item .quote {
   width: 80%;
   margin: auto;
-  margin-bottom: 70px;
+  margin-bottom: 30px;
   font-size: 0.875em;
 }
 
@@ -778,8 +777,9 @@ header .banner-content .content {
   content: url("../assets/images/quote2.svg");
   width: 30px;
   position: absolute;
-  right: 50px;
+  position: relative;
   display: block;
+  left: 202px;
 }
 
 .testimonials .testimonial-carousel .item .user-img {
@@ -1137,8 +1137,37 @@ footer p {
     max-width: 1140px;
   }
 }
-// @media (min-width: 1401px) {
-.container {
-  max-width: 1600px !important;
+@media (min-width: 1401px) {
+  .container {
+    max-width: 1600px !important;
+  }
 }
-// }
+
+.owl-carousel {
+  .slick-slider {
+    height: 321px;
+
+    .slick-list {
+      .slick-track {
+        height: 170px;
+        .slick-slide {
+          width: 343.333px !important;
+          margin-right: 40px;
+          // max-width: 1169px;
+          height: 304px;
+          &>div{
+            height: 100%;
+          }
+          .item {
+            height: 100%;
+            .img-fluid {
+              width: 45px;
+              height: 45px;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

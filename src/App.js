@@ -20,6 +20,7 @@ function App() {
       <div>
         <header>
           <Header />
+          
         </header>
         <Route path="/" component={IndexPageRender} />
         <footer>

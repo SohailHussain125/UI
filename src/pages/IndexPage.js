@@ -27,15 +27,56 @@ import certificate from "../assets/images/certificate-lg.svg"
 import section2Bg1 from "../assets/images/section2-bg1.png"
 import section2Bg2 from "../assets/images/section2-bg2.png"
 import playIcon from "../assets/images/play-icon.svg"
-
-import AliceCarousel from 'react-alice-carousel'
-import 'react-alice-carousel/lib/alice-carousel.css'
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css"
+import Slider from "react-slick";
+// import AliceCarousel from 'react-alice-carousel'
+// import 'react-alice-carousel/lib/alice-carousel.css'
 class IndexPage extends Component {
+    state = {
+        galleryItems: [1, 2, 3].map((i) => <div class="item">
+            <p class="quote">
+                A virtual classroom is an online learning environment
+                that allows for live interaction between the tutor and the
+                learners asthey are participating in learning activities.
+</p>
+            <div class="row">
+                <div class="col-3">
+                    <img alt="" src={team6} alt="" class="img-fluid" />
+                </div>
+                <div class="col-9">
+
+                </div>
+            </div>
+        </div>),
+    }
+
+    responsive = {
+        0: { items: 1 },
+        128: { items: 2 },
+
+    }
+
+    onSlideChange(e) {
+        console.debug('Item`s position during a change: ', e.item)
+        console.debug('Slide`s position during a change: ', e.slide)
+    }
+
+    onSlideChanged(e) {
+        console.debug('Item`s position after changes: ', e.item)
+        console.debug('Slide`s position after changes: ', e.slide)
+    }
 
 
-
- handleOnDragStart = (e) => e.preventDefault()
+    // handleOnDragStart = (e) => e.preventDefault()
     render() {
+        var settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 3,
+            slidesToScroll: 1
+        };
 
         return (
             <div >
@@ -375,23 +416,48 @@ class IndexPage extends Component {
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="owl-carousel owl-theme testimonial-carousel owl-loaded owl-drag">
-                                    <AliceCarousel mouseTrackingEnabled>
-                                    <div class="item" onDragStart={this.handleOnDragStart}>
-                                            <p class="quote">
-                                                A virtual classroom is an online learning environment
-                                                that allows for live interaction between the tutor and the
-                                                learners asthey are participating in learning activities.
-                                    </p>
-                                            <div class="row">
-                                                <div class="col-3">
-                                                    <img alt="" src={team6} alt="" class="img-fluid" />
-                                                </div>
-                                                <div class="col-9">
+                                    <div class="owl-carousel owl-theme testimonial-carousel owl-loaded owl-drag">
 
-                                                </div>
+                                <Slider {...settings}>
+                                    {[1, 2, 3, 4].map(item => {
+                                        return <div class="item">
+                                        <p class="quote">
+                                            A virtual classroom is an online learning environment
+                                            that allows for live interaction between the tutor and the
+                                            learners asthey are participating in learning activities.
+                            </p>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <img alt="" src={team6} alt="" class="img-fluid" />
+                                            </div>
+                                            <div class="col-9">
+                            
                                             </div>
                                         </div>
+                                    </div>;
+                                    })}
+                                    {/* <SeeAllDetails styleClass="see-details-investing-card" /> */}
+                                </Slider>
+                                    {/* <AliceCarousel
+                                    items={this.state.galleryItems}
+                                    responsive={this.responsive}
+                                    // autoPlayInterval={2000}
+                                    // autoPlayDirection="rtl"
+                                    // autoPlay={true}
+                                    fadeOutAnimation={true}
+                                    mouseTrackingEnabled={true}
+                                    // playButtonEnabled={true}
+                                    disableAutoPlayOnAction={true}
+                                    onSlideChange={this.onSlideChange}
+                                    onSlideChanged={this.onSlideChanged}
+                                    buttonsDisabled={true}
+
+                                /> */}
+
+                                    {/* <AliceCarousel
+                                        mouseTrackingEnabled
+                                        buttonsDisabled={true}
+                                    >
                                         <div class="item" onDragStart={this.handleOnDragStart}>
                                             <p class="quote">
                                                 A virtual classroom is an online learning environment
@@ -437,8 +503,23 @@ class IndexPage extends Component {
                                                 </div>
                                             </div>
                                         </div>
-                                      
-                                    </AliceCarousel>
+                                        <div class="item" onDragStart={this.handleOnDragStart}>
+                                            <p class="quote">
+                                                A virtual classroom is an online learning environment
+                                                that allows for live interaction between the tutor and the
+                                                learners asthey are participating in learning activities.
+                                    </p>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <img alt="" src={team6} alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="col-9">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </AliceCarousel> */}
                                     {/* <div>
                                         <div class="item">
                                             <p class="quote">
