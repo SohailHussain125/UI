@@ -10,14 +10,13 @@
     margin-left: auto;
     // max-width: 1109px;
   }
-  
-} 
+}
 .navbar-collapse {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  display: flex ;
+  display: flex;
   flex-basis: auto;
 
   .mr-auto {
@@ -35,7 +34,7 @@
         color: #fff;
         font-family: CircularStd;
         font-weight: 500;
-        // font-size: 0.875em;
+        font-size: 1.04em !important;
         padding-right: 1rem;
         padding-left: 1rem;
         position: relative;
@@ -65,9 +64,25 @@
     }
   }
 }
+header {
+  .navbar-fixed-top {
+    animation-timing-function: ease-in-out;
+    background: #fff;
+    box-shadow: 0 2px 3px -4px rgba(0, 0, 0, 0.75);
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+  }
+}
+
+header .navbar-fixed-top .nav-item .nav-link,
+header .navbar-fixed-top .nav-item .sign-up {
+  color: #1c1c1c !important;
+}
 @media (min-width: 1401px) {
-  
-  
 }
 
 .header-div {

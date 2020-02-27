@@ -1,5 +1,12 @@
 @import "react-alice-carousel/lib/scss/alice-carousel.scss";
 
+@font-face {
+  font-family: "CircularStd";
+  src: url("../assets/fonts/circular-std/CircularStd-Black.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
 /* CircularStd @font-face kit */
 // @font-face {
 //   font-family: "CircularStd";
@@ -113,7 +120,7 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 15px;
   line-height: 1.6;
-  color: #5e5e5e;
+  color: #5e5e5e !important;
 }
 
 .explore {
@@ -229,7 +236,7 @@ header .banner-content .content {
 
 @media (min-width: 768px) {
   .banner-card {
-    width: 30em;
+    width: 37em;
   }
 }
 
@@ -1067,9 +1074,9 @@ footer p {
   header {
     height: 100vh;
   }
-  .banner-card-wrapper {
-    padding-top: 14em;
-  }
+  // .banner-card-wrapper {
+  //   padding-top: 14em;
+  // }
   .container {
     max-width: 1600px;
   }
@@ -1155,7 +1162,7 @@ footer p {
           margin-right: 40px;
           // max-width: 1169px;
           height: 304px;
-          &>div{
+          & > div {
             height: 100%;
           }
           .item {
